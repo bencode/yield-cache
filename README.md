@@ -1,3 +1,3 @@
 # co-cache
 
-Cache utility for promise, generator or generator function
+Cache utility for yieldable object(Promise, Generator or GeneratorFunction)

@@ -1,18 +1,18 @@
 {
-  "name": "co-cache",
+  "name": "yield-cache",
   "version": "0.0.1",
-  "description": "Cache utility for Promise, Generator or GeneratorFunction",
+  "description": "Cache utility for yieldable object(Promise, Generator or GeneratorFunction)"
   "main": "index.js",
   "scripts": {
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bencode/co-cache.git"
+    "url": "git+https://github.com/bencode/yield-cache.git"
   },
   "author": "bencode@163.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bencode/co-cache/issues"
+    "url": "https://github.com/bencode/yield-cache/issues"
   },
-  "homepage": "https://github.com/bencode/co-cache#readme"
+  "homepage": "https://github.com/bencode/yield-cache#readme"
 }
