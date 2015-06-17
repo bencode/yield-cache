@@ -1,12 +1,12 @@
 # yield-cache
 
 
-Cache utility for yieldable object(Promise, Generator, GeneratorFunction)
+Cache utility for generator
 
 
 ## Useage
 
-1\. Create an instance for cache
+1\. Create an instance for cache a group of generator
 
 ```js
 var cache = yieldCache();
@@ -19,7 +19,7 @@ var cache = yieldCache();
 // it should used in generator function
 function* () {
     // call with cackeKey and yieldable object
-    var item = yield* cache(cacheKey, Promise | Generator | GeneratorFunction);
+    var item = yield* cache(cacheKey, Generator | GeneratorFunction | Functin that return Promise);
 
 }
 ```
