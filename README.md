@@ -1,25 +1,31 @@
 # yield-cache
 
-Cache utility for yieldable object(Promise, Generator or GeneratorFunction)
 
-
-## cache(gen|gen*|promise)
+Cache utility for yieldable object(Promise, Generator, GeneratorFunction or thunk)
 
 
 ```js
-var cache = require('yield-cache');
+var yieldCache = require('yield-cache');
 
 
-// init
-var itemCache = cache(function*() {
-    return yield* requestItem();
-});
+// create an instance
+var renderCache = yieldCache();
 
 
 // use
-var item = yield* itemCache.get();
+function* getRender(path) {
+    var render = yield* renderCache(path, function* () {
+        var tpl = yield fs.readFile(path, 'utf-8');
+        return compiler.complie(tpl);
+    });
 
-var item2 = yield* itemCache.get();
+    return render;
+}
 
-item.should.equal(item2);
+
+var path = ...
+var render = yield* getRender(path);
+var render2 = yield* getRender(path);
+
+render.should.equal(render2);
 ```
