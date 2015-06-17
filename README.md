@@ -9,6 +9,21 @@ $ npm install yield-cache
 ```
 
 
+## API
+
+### yieldCache()
+
+create cache instance
+
+### cache(key, obj)
+
+try get item from cache or yeild from obj
+
+### cache(key, false)
+
+remove cache item for key
+
+
 ## Useage
 
 1\. Create an instance for cache a group of generator

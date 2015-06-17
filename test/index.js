@@ -6,7 +6,7 @@ var yieldCadche = require('../');
 
 
 describe('yield-cache', function() {
-    it('cache with generator function', function(done) {
+    it('use yield cache', function(done) {
         co(function*() {
             var path = 'this is a test path';
             var list = yield [
@@ -38,9 +38,16 @@ describe('yield-cache', function() {
             var gen = function*(path) {
                 return { path: path };
             };  // jshint ignore: line
+
             var a = yield* cache('test', gen('hello'));
             var b = yield* cache('test', gen('hello'));
             a.should.equal(b);
+
+            cache.remove('test');
+            var c = yield* cache('test', gen('hello'));
+            a.should.not.equal(c);
+            a.should.eql(c);
+
         }).then(done);
     });
 
