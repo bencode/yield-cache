@@ -2,8 +2,15 @@
   "name": "yield-cache",
   "version": "0.0.1",
   "description": "Cache utility for yieldable object(Promise, Generator or GeneratorFunction)",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "jshint": "node ./node_modules/.bin/jshint lib test",
+    "test": "node --harmony ./node_modules/.bin/_mocha --require 'should' --reporter spec --recursive --bail --check-leaks test/"
+  },
+  "devDependencies": {
+    "jshint": "~2.8.0",
+    "mocha": "~2.2.5",
+    "should": "~6.0.3"
   },
   "repository": {
     "type": "git",
@@ -14,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/bencode/yield-cache/issues"
   },
-  "homepage": "https://github.com/bencode/yield-cache#readme"
+  "homepage": "https://github.com/bencode/yield-cache#readme",
+  "dependencies": {
+    "co": "~4.5.4"
+  }
 }

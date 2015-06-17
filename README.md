@@ -1,7 +1,7 @@
 # yield-cache
 
 
-Cache utility for yieldable object(Promise, Generator, GeneratorFunction or thunk)
+Cache utility for yieldable object(Promise, Generator, GeneratorFunction)
 
 
 ## Useage
@@ -19,7 +19,7 @@ var cache = yieldCache();
 // it should used in generator function
 function* () {
     // call with cackeKey and yieldable object
-    var item = yield* cache(cacheKey, promise | generator | generator function | thunk);
+    var item = yield* cache(cacheKey, Promise | Generator | GeneratorFunction);
 
 }
 ```

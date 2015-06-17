@@ -1,0 +1,36 @@
+{
+  "bitwise": true,
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "freeze": true,
+  "immed": true,
+  "indent": 2,
+  //"latedef": true,
+  //"newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "nonbsp": true,
+  "nonew": true,
+  //"plusplus": true,
+  "quotmark": "single",
+  "undef": true,
+  "unused": true,
+  //"strict": true,
+  "maxparams": 4,
+  "trailing": true,
+  "maxdepth": 3,
+  "maxstatements": 20,
+  "maxcomplexity": 7,
+  "maxlen": 80,
+  "expr": true,
+  "esnext": true,
+  "globals": {
+    "require": true,
+    "exports": true,
+    "module": true,
+
+    "describe": true,
+    "it": true
+  }
+}
