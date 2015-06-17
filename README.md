@@ -4,6 +4,11 @@
 Cache utility for generator
 
 
+```shell
+$ npm install yield-cache
+```
+
+
 ## Useage
 
 1\. Create an instance for cache a group of generator
