@@ -4,6 +4,29 @@
 Cache utility for yieldable object(Promise, Generator, GeneratorFunction or thunk)
 
 
+## Useage
+
+1. create an instance for cache
+
+```js
+var cache = yieldCache();
+```
+
+2. use cache instance
+
+
+```js
+// it should used in generator function
+function* () {
+    // call with cackeKey and yieldable object
+    var item = yield* cache(cacheKey, promise | generator | generator function | thunk);
+
+}
+```
+
+
+## Example
+
 ```js
 var yieldCache = require('yield-cache');
 
