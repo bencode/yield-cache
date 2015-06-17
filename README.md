@@ -6,13 +6,13 @@ Cache utility for yieldable object(Promise, Generator, GeneratorFunction or thun
 
 ## Useage
 
-1. create an instance for cache
+1\. Create an instance for cache
 
 ```js
 var cache = yieldCache();
 ```
 
-2. use cache instance
+2\. Use cache instance
 
 
 ```js
