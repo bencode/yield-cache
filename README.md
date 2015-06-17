@@ -1,5 +1,8 @@
 # yield-cache
 
+[![Build Status](https://travis-ci.org/bencode/yield-cache.svg?branch=master)](https://travis-ci.org/bencode/yield-cache)
+[![Coverage Status](https://coveralls.io/repos/bencode/yield-cache/badge.svg)](https://coveralls.io/r/bencode/yield-cache)
+
 
 Cache utility for generator
 
