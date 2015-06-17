@@ -24,7 +24,7 @@ var cache = yieldCache();
 // it should used in generator function
 function* () {
     // call with cackeKey and yieldable object
-    var item = yield* cache(cacheKey, Generator | GeneratorFunction | Functin that return Promise);
+    var item = yield* cache(cacheKey, Generator or GeneratorFunction or Functin that return Promise);
 
 }
 ```
