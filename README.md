@@ -15,11 +15,15 @@ $ npm install yield-cache
 
 create cache instance
 
+```
+var cache = yieldCache();
+```
+
 ### cache(key, obj)
 
 try get item from cache or yeild from obj
 
-### cache(key, false)
+### cache.remove(key)
 
 remove cache item for key
 
