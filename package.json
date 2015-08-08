@@ -4,11 +4,11 @@
   "description": "Cache utility for yieldable object(Promise, Generator or GeneratorFunction)",
   "main": "lib/index.js",
   "scripts": {
-    "jshint": "node ./node_modules/.bin/jshint lib test",
+    "eslint": "eslint lib test",
     "test": "node ./node_modules/.bin/_mocha --harmony --require 'should' --reporter spec --recursive --bail --check-leaks test/",
     "test-cov": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u exports --require 'should' --recursive --bail --check-leaks test/",
     "test-travis": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -u exports --require 'should' --recursive --bail --check-leaks test/",
-    "all": "npm run jshint && npm run test && npm run test-cov"
+    "all": "npm run eslint && npm run test && npm run test-cov"
   },
   "dependencies": {
     "co": "~4.5.4"

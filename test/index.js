@@ -47,7 +47,6 @@ describe('yield-cache', function() {
             var c = yield* cache('test', gen('hello'));
             a.should.not.equal(c);
             a.should.eql(c);
-
         }).then(done);
     });
 
@@ -73,7 +72,9 @@ describe('yield-cache', function() {
             var cache = yieldCadche();
             var o = null;
             try {
-                yield* cache('test', function() { return 123; });
+                yield* cache('test', function() {
+                    return 123;
+                });
             } catch (e) {
                 o = e;
             }
