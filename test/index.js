@@ -81,6 +81,31 @@ describe('yield-cache', function() {
             o.should.be.instanceof(TypeError);
         }).then(done);
     });
+
+
+    it('throw error', function(done) {
+        co(function* () {
+            var cache = yieldCadche();
+            var times = 0;
+            var fn = function() {
+                times++;
+                return new Promise(function(resolve, reject) {
+                    reject(new Error('some error'));
+                });
+            };
+
+            try {
+                yield* cache('test', fn);
+            } catch (e1) {
+                try {
+                    yield* cache('test', fn);
+                } catch (e2) {
+                    // ignore
+                }
+            }
+            times.should.be.equal(2);
+        }).then(done);
+    });
 });
 
 
