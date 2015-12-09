@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-  - "0.12"
-  - "0.11"
-  - "iojs"
-script: "npm run test-travis"
+  - "4.1"
+  - "4.0"
+script: "npm run travis"
 after_script: "npm install coveralls && cat ./coverage/lcov.info | coveralls"
+

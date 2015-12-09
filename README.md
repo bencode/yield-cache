@@ -7,6 +7,12 @@
 Cache utility for generator
 
 
+plover \ node | 5.x | 4.x | 0.12.x
+---           | --- | --- | ----
+0.x.x         | √   | √   | √
+1.x.x         | √   | √   | X
+
+
 ```shell
 $ npm install yield-cache
 ```

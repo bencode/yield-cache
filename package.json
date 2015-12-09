@@ -1,23 +1,24 @@
 {
   "name": "yield-cache",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "description": "Cache utility for yieldable object(Promise, Generator or GeneratorFunction)",
   "main": "lib/index.js",
   "scripts": {
-    "eslint": "eslint lib test",
+    "lint": "node ./node_modules/.bin/eslint lib test",
     "test": "node ./node_modules/.bin/_mocha --harmony --require 'should' --reporter spec --recursive --bail --check-leaks test/",
-    "test-cov": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u exports --require 'should' --recursive --bail --check-leaks test/",
-    "test-travis": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -u exports --require 'should' --recursive --bail --check-leaks test/",
-    "all": "npm run eslint && npm run test && npm run test-cov"
+    "cov": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u exports --require 'should' --recursive --bail --check-leaks test/",
+    "travis": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -u exports --require 'should' --recursive --bail --check-leaks test/",
+    "all": "npm run lint && npm run test && npm run cov"
   },
   "dependencies": {
     "co": "~4.5.4"
   },
   "devDependencies": {
-    "jshint": "~2.8.0",
-    "mocha": "~2.2.5",
-    "should": "~6.0.3",
-    "istanbul-for-harmony": "^0.3.11"
+    "eslint": "~1.10.3",
+    "eslint-config-bce": "~0.4.2",
+    "istanbul": "~0.4.1",
+    "mocha": "~2.3.4",
+    "should": "~8.0.0"
   },
   "repository": {
     "type": "git",
