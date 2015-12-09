@@ -2,6 +2,7 @@
 1.0.0 / 2015-12-09
 ==================
 
+ * use Map for cache
  * refactor: use es6
 
 
