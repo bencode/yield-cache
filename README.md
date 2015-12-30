@@ -51,9 +51,8 @@ var cache = yieldCache();
 ```js
 // it should used in generator function
 function* () {
-    // call with cackeKey and yieldable object
-    var item = yield* cache(cacheKey, Generator or GeneratorFunction or Functin that return Promise);
-
+  // call with cackeKey and yieldable object
+  var item = yield* cache(cacheKey, Generator or GeneratorFunction or Functin that return Promise);
 }
 ```
 
@@ -70,12 +69,12 @@ var renderCache = yieldCache();
 
 // use
 function* getRender(path) {
-    var render = yield* renderCache(path, function* () {
-        var tpl = yield fs.readFile(path, 'utf-8');
-        return compiler.complie(tpl);
-    });
+  var render = yield* renderCache(path, function* () {
+    var tpl = yield fs.readFile(path, 'utf-8');
+    return compiler.complie(tpl);
+  });
 
-    return render;
+  return render;
 }
 
 
