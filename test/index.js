@@ -2,7 +2,7 @@
 
 
 const co = require('co');
-const yieldCadche = require('../');
+const yieldCache = require('../');
 
 
 /* global setTimeout */
@@ -37,7 +37,7 @@ describe('yield-cache', function() {
 
   it('cache with generator', function() {
     return co(function* () {
-      const cache = yieldCadche();
+      const cache = yieldCache();
       const gen = function* (path) {
         return { path: path };
       };
@@ -56,7 +56,7 @@ describe('yield-cache', function() {
 
   it('type error', function() {
     return co(function* () {
-      const cache = yieldCadche();
+      const cache = yieldCache();
       let o = null;
       try {
         const obj = {};
@@ -72,7 +72,7 @@ describe('yield-cache', function() {
 
   it('invalid function', function() {
     return co(function* () {
-      const cache = yieldCadche();
+      const cache = yieldCache();
       let o = null;
       try {
         yield* cache('test', function() {
@@ -88,7 +88,7 @@ describe('yield-cache', function() {
 
   it('throw error', function() {
     return co(function* () {
-      const cache = yieldCadche();
+      const cache = yieldCache();
       let times = 0;
       const fn = function() {
         times++;
@@ -116,10 +116,24 @@ describe('yield-cache', function() {
       times.should.be.equal(1);
     });
   });
+
+
+  it('return null is ok', function() {
+    return co(function* () {
+      const cache = yieldCache();
+      const ret = yield* cache('test', function* () {
+        return null;
+      });
+      const ret2 = yield* cache('test', function* () {});
+
+      (ret === null).should.be.true();
+      (ret2 === null).should.be.true();
+    });
+  });
 });
 
 
-const readCache = yieldCadche();
+const readCache = yieldCache();
 function* readWithCache(path) {
   return yield* readCache(path, function* () {
     return yield read(path);
@@ -127,7 +141,7 @@ function* readWithCache(path) {
 }
 
 
-const promiseCache = yieldCadche();
+const promiseCache = yieldCache();
 function* readWithPromiseCache(path) {
   return yield* promiseCache(path, read);
 }
