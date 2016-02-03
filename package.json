@@ -1,6 +1,6 @@
 {
   "name": "yield-cache",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Cache utility for yieldable object(Promise, Generator or GeneratorFunction)",
   "main": "lib/index.js",
   "scripts": {
