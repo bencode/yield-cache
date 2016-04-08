@@ -1,6 +1,6 @@
 {
   "name": "yield-cache",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Cache utility for yieldable object(Promise, Generator or GeneratorFunction)",
   "main": "lib/index.js",
   "scripts": {
@@ -8,12 +8,14 @@
     "test": "mocha --require should --reporter spec --recursive --bail --check-leaks test/",
     "cov": "istanbul cover _mocha -- -u exports --require should --recursive --bail --check-leaks test/",
     "travis": "istanbul cover _mocha --report lcovonly -- -u exports --require should --recursive --bail --check-leaks test/",
-    "all": "npm run lint && npm run test && npm run cov"
+    "all": "npm run lint && npm run test && npm run cov",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -o CHANGELOG.md -s"
   },
   "dependencies": {
     "co": "~4.6.0"
   },
   "devDependencies": {
+    "conventional-changelog-cli": "~1.1.1",
     "eslint": "~1.10.3",
     "eslint-config-bce": "~0.5.0",
     "istanbul": "~0.4.1",
