@@ -4,10 +4,10 @@
   "description": "Cache utility for yieldable object(Promise, Generator or GeneratorFunction)",
   "main": "lib/index.js",
   "scripts": {
-    "lint": "node ./node_modules/.bin/eslint lib test",
-    "test": "node ./node_modules/.bin/_mocha --harmony --require 'should' --reporter spec --recursive --bail --check-leaks test/",
-    "cov": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u exports --require 'should' --recursive --bail --check-leaks test/",
-    "travis": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -u exports --require 'should' --recursive --bail --check-leaks test/",
+    "lint": "eslint lib test",
+    "test": "mocha --require should --reporter spec --recursive --bail --check-leaks test/",
+    "cov": "istanbul cover _mocha -- -u exports --require should --recursive --bail --check-leaks test/",
+    "travis": "istanbul cover _mocha --report lcovonly -- -u exports --require should --recursive --bail --check-leaks test/",
     "all": "npm run lint && npm run test && npm run cov"
   },
   "dependencies": {

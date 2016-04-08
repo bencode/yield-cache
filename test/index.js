@@ -113,7 +113,7 @@ describe('yield-cache', function() {
 
       t1.should.be.an.Error();
       t2.should.be.an.Error();
-      times.should.be.equal(1);
+      times.should.be.equal(2);
     });
   });
 
