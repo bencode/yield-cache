@@ -25,7 +25,7 @@ $ npm install yield-cache
 create cache instance
 
 ```
-var cache = yieldCache();
+const cache = yieldCache();
 ```
 
 ### cache(key, obj)
@@ -42,7 +42,7 @@ remove cache item for key
 1\. Create an instance for cache a group of generator
 
 ```js
-var cache = yieldCache();
+const cache = yieldCache();
 ```
 
 2\. Use cache instance
@@ -52,7 +52,7 @@ var cache = yieldCache();
 // it should used in generator function
 function* () {
   // call with cackeKey and yieldable object
-  var item = yield* cache(cacheKey, Generator or GeneratorFunction or Functin that return Promise);
+  const item = yield* cache(cacheKey, Generator or GeneratorFunction or Functin that return Promise);
 }
 ```
 
@@ -60,17 +60,17 @@ function* () {
 ## Example
 
 ```js
-var yieldCache = require('yield-cache');
+const yieldCache = require('yield-cache');
 
 
 // create an instance
-var renderCache = yieldCache();
+const renderCache = yieldCache();
 
 
 // use
 function* getRender(path) {
-  var render = yield* renderCache(path, function* () {
-    var tpl = yield fs.readFile(path, 'utf-8');
+  const render = yield* renderCache(path, function* () {
+    const tpl = yield fs.readFile(path, 'utf-8');
     return compiler.complie(tpl);
   });
 
@@ -78,9 +78,9 @@ function* getRender(path) {
 }
 
 
-var path = ...
-var render = yield* getRender(path);
-var render2 = yield* getRender(path);
+const path = ...
+const render = yield* getRender(path);
+const render2 = yield* getRender(path);
 
 render.should.equal(render2);
 ```
